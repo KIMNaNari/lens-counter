@@ -29,8 +29,9 @@
 
   <div class="param">최소 반지름: <input type="range" id="minRadius" min="1" max="100" value="30"> <span id="minRadiusVal">30</span></div>
   <div class="param">최대 반지름: <input type="range" id="maxRadius" min="1" max="100" value="55"> <span id="maxRadiusVal">55</span></div>
-  <div class="param">원 간 최소 거리: <input type="range" id="minDist" min="1" max="100" value="25"> <span id="minDistVal">25</span></div>
+  <div class="param">원 간 최소 거리: <input type="range" id="minDist" min="1" max="100" value="50"> <span id="minDistVal">50</span></div>
   <div class="param">표시 색상: <input type="color" id="circleColor" value="#00ff00"></div>
+  <div class="param">표시 두께: <input type="range" id="thick" min="2" max="20" value="7"> <span id="thickVal">7</span></div>
 
   <button onclick="process()">검출하기</button>
   <p>검출된 원 개수: <span id="count">0</span></p>
@@ -82,6 +83,8 @@
       let param2 = 30;
       let minRadius = Number(document.getElementById('minRadius').value);
       let maxRadius = Number(document.getElementById('maxRadius').value);
+      let thickn = Number(document.getElementById('thick').value);
+
 
       cv.HoughCircles(gray, circles, cv.HOUGH_GRADIENT, dp, minDist, param1, param2, minRadius, maxRadius);
 
@@ -96,7 +99,7 @@
         ctx.beginPath();
         ctx.arc(x, y, r, 0, 2 * Math.PI);
         ctx.strokeStyle = color;
-        ctx.lineWidth = 7;
+        ctx.lineWidth = thickn;
         ctx.stroke();
         count++;
       }
