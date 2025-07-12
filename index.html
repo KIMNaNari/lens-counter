@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>렌즈 몰드 카운터</title>
+  <title>🔎 렌즈 몰드 카운터</title>
   <style>
     body { font-family: Arial; text-align: center; padding: 20px; }
     canvas { border: 1px solid #ccc; margin-top: 10px; max-width: 100%; height: auto; }
@@ -34,7 +34,8 @@
   <div class="param">표시 두께: <input type="range" id="thick" min="2" max="20" value="7"> <span id="thickVal">7</span></div>
 
   <button onclick="process()">검출하기</button>
-  <p>검출된 원 개수: <span id="count">0</span></p>
+  <p style="font-size: 28px; font-weight: bold;">
+  검출된 원 개수: <span id="count">0</span></p>
 
   <img id="hiddenImg">
   <canvas id="canvas"></canvas>
